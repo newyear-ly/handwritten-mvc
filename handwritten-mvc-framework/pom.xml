@@ -5,9 +5,9 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.tyshawn</groupId>
+    <groupId>pub.newyear</groupId>
     <artifactId>handwritten-mvc-framework</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-RELEASE</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -109,5 +109,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- mvn deploy 把jar包发布到nexus私服中 -->
+    <distributionManagement>
+        <!-- 发布到发行版本的仓库中，即正式版本仓库 -->
+        <repository>
+            <!--repository里的id需要和第一步里的server id名称保持一致-->
+            <id>3rdParty</id>
+            <!--仓库名称-->
+            <name>3rdParty</name>
+            <!--私服仓库地址-->
+            <url>http://newyear.pub:8081/repository/3rdParty/</url>
+        </repository>
+    </distributionManagement>
     
 </project>
